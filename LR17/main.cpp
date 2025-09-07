@@ -1,4 +1,4 @@
-#include "sortedarray.h"
+#include "SortedArray.h"
 #include <iostream>
 
 struct Point
@@ -46,6 +46,25 @@ int main()
     Point p1 = points.at(1);
     std::cout << "points[0]=(" << p0.x << "," << p0.y << "," << p0.z << ")\n";
     std::cout << "points.at(1)=(" << p1.x << "," << p1.y << "," << p1.z << ")\n";
+
+    SortedArray<int> a(5);
+    a.push(1); a.push(2); a.push(3);
+
+    SortedArray<int> b(5);
+    b.push(4); b.push(5);
+
+    std::cout << "A: "; a.print();
+    std::cout << "B: "; b.print();
+    a + b;
+    std::cout << "A + B: "; a.print();
+
+    SortedArray<int> c(5);
+    c.push(2); c.push(4);
+
+    std::cout << "A: "; a.print();
+    std::cout << "C: "; c.print();
+    SortedArray<int> d = a - c;
+    std::cout << "A - C: "; d.print();
 
     return 0;
 }
