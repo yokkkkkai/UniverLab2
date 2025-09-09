@@ -1,3 +1,6 @@
+#ifndef NODE_H
+#define NODE_H
+
 #include <vector>
 
 struct Node
@@ -8,3 +11,5 @@ struct Node
 
     Node(int val);
 };
+
+#endif
