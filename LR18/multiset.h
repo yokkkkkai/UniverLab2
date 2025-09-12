@@ -22,9 +22,9 @@ public:
     int find(int val) const;
     void erase(int val);
     friend std::ostream& operator<<(std::ostream& out, const Multiset& item);
+    friend std::istream& operator>>(std::istream& in, Multiset& item);
 
+    std::ostream& printTree(std::ostream& out, Node* node);
 };
-
-void print(std::ostream& out, Node* node);
 
 #endif

@@ -1,4 +1,5 @@
 #include "multiset.h"
+#include <queue>
 
 void Multiset::destroy(Node* node)
 {
@@ -153,11 +154,38 @@ void print(std::ostream& out, Node* node)
     }
 }
 
-std::ostream& operator<<(std::ostream& out, const Multiset& mset)
+void printTree(std::ostream& out, Node* node, int level = 0) {
+    if (node == nullptr) {
+        return;
+    }
+    printTree(out, node->right, level + 1);
+
+    for (int i = 0; i < level; ++i) {
+        out << "\t";
+    }
+    
+    out << node->value[0] << std::endl;
+
+    printTree(out, node->left, level + 1);
+}
+
+std::ostream& operator<<(std::ostream& out, const Multiset& item)
 {
-    print(out, mset.root);
+    printTree(out, item.root);
 
     return out;
+}
+
+std::istream& operator>>(std::istream& in, Multiset& item)
+{
+    std::cout << "Enter nums(0 - end): " << std::endl;
+    int val = 1;
+    while(in >> val && val != 0 && val != EOF)
+    {
+        item.insert(val);
+    }
+
+    return in;
 }
 
 /*
@@ -169,3 +197,6 @@ int find(int value) //возвращает количество
 void erase(int value) //удаляет один экземпляр записи
 operator<< для вывода на экран
 */
+
+//operator>>
+//графический вывод
