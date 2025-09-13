@@ -2,6 +2,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <queue>
+#include <stack>
 #include "graph.h"
 
 Graph::Graph(const std::string& filename) {
@@ -29,7 +30,7 @@ void Graph::print() {
     }
 }
 
-void Graph::reachable(const std::string& out_filename) {
+void Graph::reachable_bfs(const std::string& out_filename) {
     std::ofstream fout(out_filename);
     if (!fout.is_open()) {
         throw std::runtime_error("Failed to open output file");
@@ -55,6 +56,33 @@ void Graph::reachable(const std::string& out_filename) {
                 }
             }
         }
+        fout << "\n";
+    }
+}
+
+void Graph::dfs(size_t v, std::vector<bool>& visited, std::ofstream& fout, bool isStart) {
+    visited[v] = true;
+    if(!isStart) {
+        fout << v + 1 << " ";
+    }
+
+    for (size_t i = 0; i < n; i++) {
+        if (matrix[v][i] == 1 && visited[i] == false) {
+            dfs(i, visited, fout, false);
+        }
+    }
+}
+
+void Graph::reachable_dfs(const std::string& out_filename) {
+    std::ofstream fout(out_filename);
+    if (!fout.is_open()) {
+        throw std::runtime_error("Failed to open output file");
+    }
+
+    for (size_t start = 0; start < n; start++) {
+        std::vector<bool> visited(n, false);
+        fout << "From vertex " << (start + 1) << " reachable: ";
+        dfs(start, visited, fout, true);
         fout << "\n";
     }
 }

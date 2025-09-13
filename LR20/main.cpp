@@ -14,7 +14,8 @@
 int main() {
     try {
         Graph g("m.txt");
-        g.reachable("result.txt");
+        g.reachable_bfs("result_bfs.txt");
+        g.reachable_dfs("result_dfs.txt");
     } catch (const std::runtime_error& e) {
         std::cout << "Error! " << e.what() << std::endl;
     }

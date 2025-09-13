@@ -1,0 +1,4 @@
+From vertex 1 reachable: 2 3 4 
+From vertex 2 reachable: 3 4 1 
+From vertex 3 reachable: 4 1 2 
+From vertex 4 reachable: 1 2 3 
