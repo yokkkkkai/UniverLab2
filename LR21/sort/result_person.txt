@@ -1,5 +1,0 @@
-Alice 10
-Artem 17
-Ivan 20
-Andrey 29
-Roman 35
