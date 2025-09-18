@@ -1,0 +1,7 @@
+BELLMAN-FORD:
+  Total operations: 200001
+  Distance updates: 620
+
+DIJKSTRA:
+  Total operations: 1588
+  Distance updates: 294
