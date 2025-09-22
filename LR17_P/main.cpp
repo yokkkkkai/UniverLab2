@@ -19,14 +19,16 @@ int main() {
     DoubleList<int> d_i;
     d_i.push_back(1);
     d_i.push_back(2);
-    d_i.push_back(3);
-    d_i.push_front(0);
+    d_i.push_back(33);
     std::cout << "Int list: ";
+    d_i.print();
+    std::cout << "Push front: ";
+    d_i.push_front(0);
     d_i.print();
     std::cout << "Size: " << d_i.size() << std::endl;
     std::cout << "Element at index 2: " << d_i.at(2) << std::endl;
-    d_i.find_and_erase(2);
-    std::cout << "After erase 2: ";
+    d_i.find_and_erase(33);
+    std::cout << "After erase: ";
     d_i.print();
 
     DoubleList<double> d_d;
@@ -54,9 +56,9 @@ int main() {
     std::cout << "After erase (4,5,6): ";
     d_p.print();
 
-    std::cout << "Try erase 100: " << std::endl;
+    std::cout << "Try erase 8 in int list: " << std::endl;
     try {
-        d_i.find_and_erase(100);
+        d_i.find_and_erase(8);
     } catch (std::out_of_range& e) {
         std::cout << "Exception caught: " << e.what() << std::endl;
     }
