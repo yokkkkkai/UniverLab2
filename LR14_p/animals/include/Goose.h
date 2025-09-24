@@ -1,7 +1,6 @@
 #ifndef GOOSE_H
 #define GOOSE_H
 
-#include <iostream>
 #include <string>
 #include "Bird.h"
 
