@@ -6,8 +6,8 @@
 
 struct Metrics 
 {
-    unsigned long total_operations = 0;
-    unsigned long distance_updates = 0;
+    size_t total_operations = 0;
+    size_t distance_updates = 0;
 };
 
 class Graph {

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-g++ *.cpp -o sorts
 rm -rf output
 echo "Delete output dir"
 mkdir output 

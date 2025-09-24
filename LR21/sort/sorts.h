@@ -12,7 +12,6 @@ struct Metrics {
     size_t passes = 0;
 };
 
-// Объявления функций
 bool compareByName(const Person& a, const Person& b);
 bool compareByAge(const Person& a, const Person& b);
 

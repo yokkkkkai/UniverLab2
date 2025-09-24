@@ -4,13 +4,6 @@
 #include <iostream>
 #include <exception>
 
-/*
-operator>>, operator<< +
-operator+ +, operator-
-replace +
-sort 
-*/
-
 template <typename T>
 struct Node {
     T data;
@@ -160,6 +153,7 @@ void DoubleList<T>::clear() {
     while (current != nullptr) {
         Node<T>* next_node = current->next;
         delete current;                    
+
         current = next_node;
     }
     head = nullptr;
@@ -259,9 +253,11 @@ std::istream& operator>>(std::istream& in, DoubleList<U>& obj) {
     return in;
 }
 
+
 template <typename T>
 DoubleList<T> DoubleList<T>::operator+(const DoubleList<T>& other) const{
     DoubleList<T> result;
+
     for(int i = 0; i < this->_size; i++) {
         result.push_back(this->at(i));
     }

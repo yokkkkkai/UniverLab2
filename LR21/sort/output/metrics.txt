@@ -1,0 +1,6 @@
+MergeSort (int) | Comparisons: 120420 | Swaps: 0 | Passes: 9999
+BubbleSort (int) | Comparisons: 99120087 | Swaps: 25165940 | Passes: 9913
+InsertionSort (int) | Comparisons: 25175928 | Swaps: 25165940 | Passes: 10000
+MergeSort (Person, age) | Comparisons: 8690 | Swaps: 0 | Passes: 999
+BubbleSort (Person, age) | Comparisons: 985014 | Swaps: 251126 | Passes: 986
+InsertionSort (Person, age) | Comparisons: 252119 | Swaps: 251126 | Passes: 1000
